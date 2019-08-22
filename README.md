@@ -1,7 +1,7 @@
 # Water Transfer Platform Server API Documentation
 
 ## Non-Authed Endpoints 
-| **path** | **HTTP Verb** | **Valid HTTP Statuses** |                       **Controller Description**                         |
+| **Path** | **HTTP Verb** | **Valid HTTP Statuses** |                       **Controller Description**                         |
 | :------- | :-----------: | :---------------------: | :----------------------------------------------------------------------- |
 | /auth    |     POST      |        200, 403         | Accepts Login Credentials & Returns Auth JWT Upon Success                |
 | /lost-pw |     POST      |        204, 404         | Sends Password Reset Link To A Given Email Or 404 If Email Is Not In Use |
@@ -26,11 +26,11 @@
 | /listings/:listingid          |     DELETE    |    204, 401, 404, 410   | Flags A Specific Active Listing Created By User As Deleted |
 
 ### Offers Endpoints
-|      **Path**    | **HTTP Verb** |         **Controller Description**           |
-| :--------------- | :-----------: | :------------------------------------------- |
-| /offers          |     GET       | Get All Active Offers Created By User        |
-| /offers/:offerId |     GET       | Get Specific Offer Created By User           |
-| /offers/:offerId |     PATCH     | Mutate Specific Offer Created By User        |
+|      **Path**    | **HTTP Verb** | **Valid HTTP Statuses** |         **Controller Description**           |
+| :--------------- | :-----------: | :---------------------: | :------------------------------------------- |
+| /offers          |     GET       |        200, 401         | Get All Active Offers Created By User        |
+| /offers/:offerId |     GET       |    200, 401, 404, 410   | Get Specific Offer Created By User           |
+| /offers/:offerId |     PATCH     |    204, 401, 404, 410   | Mutate Specific Offer Created By User        |
 
 
 <!-- | /listings/:listingid/offers          |     GET       | Gets All Offers On A Listing "Owned" By The User                  |
@@ -38,11 +38,10 @@
 | /listings/:id/offers/:offerid |     GET       | Gets A Specific Offer "Owned" By The User                         |
 | /listings/:id/offers/:offerid |     POST      | Mutates A Specific Offer "Owned" By The User                      | -->
 
-
 ### Admin API Endpoints
-|    **Path**           | **HTTP Verbs** |               **Controller Description**                  |
-| :-------------------- | :------------: | --------------------------------------------------------- |
-| /admin/auth/register  |      POST      | Accepts Account Info & Creates User                       |
-| /admin/auth/register  |      POST      | Accepts Account Info & Creates User                       |
-| /admin/auth/register  |      POST      | Accepts Account Info & Creates User                       |
-| /admin/auth/register  |      POST      | Accepts Account Info & Creates User                       |
+|        **Path**       | **HTTP Verbs** | **Valid HTTP Statuses** |     **Controller Description**       |
+| :-------------------- | :------------: | :---------------------: | :----------------------------------- |
+| /admin/auth/register  |      POST      |                         | Accepts Account Info & Creates User  |
+| /admin/auth/register  |      POST      |                         | Accepts Account Info & Creates User  |
+| /admin/auth/register  |      POST      |                         | Accepts Account Info & Creates User  |
+| /admin/auth/register  |      POST      |                         | Accepts Account Info & Creates User  |
