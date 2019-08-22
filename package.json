@@ -1,12 +1,11 @@
 {
   "name": "wtp-backend",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Backend for The Water Agency Inc's Water Transfer Platform",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Frederick \"Fritz\" Johnson",
   "license": "ISC",
   "devDependencies": {
