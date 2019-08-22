@@ -13,7 +13,7 @@
 | :-------- | :-----------: | :---------------------: | :----------------------------------------------------- |
 | /account  |     GET       |        200, 401         | Accesses User's Account Data                           |
 | /account  |     PATCH     |        204, 401         | Mutates User's Non-Password Account Data               |
-| /account  |     DELETE    |        204, 401         | Flags User Account As Deleted & Emails Admins an alert |
+| /account  |     DELETE    |        204, 401         | Flags User Account As Deleted & Emails Admins An Alert |
 | /reset-pw |     PATCH     |      204, 401, 403      | Mutates User's Password Hash (Requires PW Confirm)     |
 
 ### Listings Endpoints
@@ -22,15 +22,15 @@
 | /listings                     |     GET       |        200, 401         | Accesses All Active Listings                                   |
 | /listings                     |     POST      |        201, 401         | Creates New Listing                                            |
 | /listings/:listingid          |     GET       |    200, 401, 404, 410   | Accesses A Specific Active Listing                             |
-| /listings/:listingid          |     PATCH     |    204, 401, 404, 410   | Mutates A Specific Active Listing Created By The User          |
-| /listings/:listingid          |     DELETE    |    204, 401, 404, 410   | Flags A Specific Active Listing Created By The User As Deleted |
+| /listings/:listingid          |     PATCH     |    204, 401, 404, 410   | Mutates A Specific Active Listing Created By User          |
+| /listings/:listingid          |     DELETE    |    204, 401, 404, 410   | Flags A Specific Active Listing Created By User As Deleted |
 
 ### Offers Endpoints
 |      **Path**    | **HTTP Verb** |         **Controller Description**           |
 | :--------------- | :-----------: | :------------------------------------------- |
-| /offers          |     GET       | Get All Active Offers Created By The User    |
-| /offers/:offerId |     GET       | Get Specific Offer Created By The User       |
-| /offers/:offerId |     PATCH     | Mutate Specific Offer Created By The User    |s
+| /offers          |     GET       | Get All Active Offers Created By User        |
+| /offers/:offerId |     GET       | Get Specific Offer Created By User           |
+| /offers/:offerId |     PATCH     | Mutate Specific Offer Created By User        |
 
 
 <!-- | /listings/:listingid/offers          |     GET       | Gets All Offers On A Listing "Owned" By The User                  |
