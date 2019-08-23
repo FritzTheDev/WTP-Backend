@@ -37,13 +37,16 @@ app.use(json());
 
 // Cross-Origin Request sharing
 app.use(cors()); // TODO Before Prod: Configure CORS Beyond Default
+
 // Passport
 app.use(passport.initialize());
+
 // Passport Extension Allowing For "Sessions"
 app.use(passport.session()); // TODO: See if this is mandatory for JWT Auth.
 
+// Catch-All Route For Bad Requests
 app.get("*", (req, res) => {
-  res.status(400).json({ error: "The Requested Endpoint Does Not Exist"});
+  res.status(501).json({ error: "The Requested Endpoint Does Not Exist"});
 });
 
 export const startApp = () => {
