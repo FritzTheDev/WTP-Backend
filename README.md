@@ -33,12 +33,6 @@
 | /offers/:offerid |     GET       |    200, 401, 404, 410   | Get Specific Offer Created By User           |
 | /offers/:offerid |     PATCH     |    204, 401, 404, 410   | Mutate Specific Offer Created By User        |
 
-
-<!-- | /listings/:listingid/offers          |     GET       | Gets All Offers On A Listing "Owned" By The User                  |
-| /listings/:listingid/offers          |     POST      | Creates An Offer On A Listing *NOT* "Owned" By The User           |
-| /listings/:id/offers/:offerid |     GET       | Gets A Specific Offer "Owned" By The User                         |
-| /listings/:id/offers/:offerid |     POST      | Mutates A Specific Offer "Owned" By The User                      | -->
-
 ### Admin API Endpoints
 |      **Path**     | **HTTP Verbs** | **Valid HTTP Statuses** |     **Controller Description**            |
 | :---------------- | :------------: | :---------------------: | :---------------------------------------- |
