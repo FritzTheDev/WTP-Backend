@@ -17,10 +17,13 @@ if (!process.env.MONGO_URI) {
 
 // Connect To Mongo
 Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
+
+// Log Successful Connection
 Mongoose.connection.on("connected", () => {
   console.info("Mongoose Connection Active");
 });
 
+// Handle DB Connection Errors
 Mongoose.connection.on("error", (err) => {
   console.error("Database Error: " + err);
 });
