@@ -49,6 +49,7 @@ app.get("*", (req, res) => {
   res.status(404).json({ error: "The Requested Endpoint Does Not Exist"});
 });
 
+// Function To Call From index.ts
 export const startApp = () => {
   app.listen(port, () => {
     console.info("Server Running On", port);
