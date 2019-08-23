@@ -7,12 +7,12 @@ import passport from "passport";
 // Environment Var Injection
 config();
 
-// Set Port
+// Set Port, defaulting to 1337
 const port = process.env.PORT || 1337;
 
 // Throws if no Mongo URI variable is set
 if (!process.env.MONGO_URI) {
-  throw new Error("Mongo URI Environment Variable Not Set");
+  throw new Error("Mongo_URI Environment Variable Not Set");
 }
 
 // Connect To Mongo
@@ -51,6 +51,6 @@ app.get("*", (req, res) => {
 
 export const startApp = () => {
   app.listen(port, () => {
-    console.info("Server Running On ", port);
+    console.info("Server Running On", port);
   });
 };
