@@ -17,6 +17,7 @@
     "@types/passport": "^1.0.1",
     "@types/passport-jwt": "^3.0.1",
     "ts-node-dev": "^1.0.0-pre.41",
+    "tslint": "^5.19.0",
     "typescript": "^3.5.3"
   },
   "dependencies": {
