@@ -30,8 +30,8 @@
 |      **Path**    | **HTTP Verb** | **Valid HTTP Statuses** |         **Controller Description**           |
 | :--------------- | :-----------: | :---------------------: | :------------------------------------------- |
 | /offers          |     GET       |        200, 401         | Get All Active Offers Created By User        |
-| /offers/:offerId |     GET       |    200, 401, 404, 410   | Get Specific Offer Created By User           |
-| /offers/:offerId |     PATCH     |    204, 401, 404, 410   | Mutate Specific Offer Created By User        |
+| /offers/:offerid |     GET       |    200, 401, 404, 410   | Get Specific Offer Created By User           |
+| /offers/:offerid |     PATCH     |    204, 401, 404, 410   | Mutate Specific Offer Created By User        |
 
 
 <!-- | /listings/:listingid/offers          |     GET       | Gets All Offers On A Listing "Owned" By The User                  |
@@ -40,9 +40,10 @@
 | /listings/:id/offers/:offerid |     POST      | Mutates A Specific Offer "Owned" By The User                      | -->
 
 ### Admin API Endpoints
-|        **Path**       | **HTTP Verbs** | **Valid HTTP Statuses** |     **Controller Description**       |
-| :-------------------- | :------------: | :---------------------: | :----------------------------------- |
-| /admin/auth/register  |      POST      |                         | Accepts Account Info & Creates User  |
-| /admin/auth/register  |      POST      |                         | Accepts Account Info & Creates User  |
-| /admin/auth/register  |      POST      |                         | Accepts Account Info & Creates User  |
-| /admin/auth/register  |      POST      |                         | Accepts Account Info & Creates User  |
+|      **Path**     | **HTTP Verbs** | **Valid HTTP Statuses** |     **Controller Description**            |
+| :---------------- | :------------: | :---------------------: | :---------------------------------------- |
+| /admin/u          |      GET       |                         | Gets A List Of All Users                  |
+| /admin/u/register |      POST      |                         | Creates User & Sends Link To Set Password |
+| /admin/u/:userid  |      GET       |                         | Gets A Specific User's Information        |
+| /admin/u/:userid  |      PATCH     |                         | Mutates A Specific User's Information     |
+| /admin/u/:userid  |      DELETE    |                         | Flags A Specific User As Deleted          |
