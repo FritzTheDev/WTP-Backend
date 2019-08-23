@@ -46,7 +46,7 @@ app.use(passport.session()); // TODO: See if this is mandatory for JWT Auth.
 
 // Catch-All Route For Bad Requests
 app.get("*", (req, res) => {
-  res.status(501).json({ error: "The Requested Endpoint Does Not Exist"});
+  res.status(404).json({ error: "The Requested Endpoint Does Not Exist"});
 });
 
 export const startApp = () => {
