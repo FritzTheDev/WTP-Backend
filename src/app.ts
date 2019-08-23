@@ -1,9 +1,14 @@
+import cors from "cors";
 import { config } from "dotenv";
 import express, { json } from "express";
 import Mongoose from "mongoose";
+import passport from "passport";
 
 // Environment Var Injection
 config();
+
+// Set Port
+const port = process.env.PORT || 1337;
 
 // Throws if no Mongo URI variable is set
 if (!process.env.MONGO_URI) {
@@ -13,7 +18,7 @@ if (!process.env.MONGO_URI) {
 // Connect To Mongo
 Mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 Mongoose.connection.on("connected", () => {
-  console.log("Mongoose Connection Active");
+  console.info("Mongoose Connection Active");
 });
 
 Mongoose.connection.on("error", (err) => {
@@ -24,4 +29,22 @@ Mongoose.connection.on("error", (err) => {
 const app: express.Application = express();
 
 // Global Middlewares
+// Body Parser
 app.use(json());
+
+// Cross-Origin Request sharing
+app.use(cors()); // TODO Before Prod: Configure CORS Beyond Default
+// Passport
+app.use(passport.initialize());
+// Passport Extension Allowing For "Sessions"
+app.use(passport.session()); // TODO: See if this is mandatory for JWT Auth.
+
+app.get("*", (req, res) => {
+  res.status(400).json({ error: "The Requested Endpoint Does Not Exist"});
+});
+
+export const startApp = () => {
+  app.listen(port, () => {
+    console.info("Server Running On ", port);
+  });
+};
